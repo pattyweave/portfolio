@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  $content: Observable<any[]>;
+
+  constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
+    const landingCollection: AngularFirestoreCollection<any> = this.afs.collection('landing');
+    this.$content = landingCollection.valueChanges();
   }
 
 }
