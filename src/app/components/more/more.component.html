@@ -36,10 +36,29 @@
                 <br>
                 <br>
             </ul>
+            <div class="row" *ngIf="word | async as w">
+                <div class="col">
+                    <h4>Word of the Day</h4>
+                    <br>
+                    <ul class="fa-ul">
+                        <li><span class="fa-li">
+                                <fa-icon [icon]="faBook">
+                                </fa-icon>
+                            </span>
+                            <h5>{{ w.word | titlecase }}</h5>
+                            <p>{{ w.definitions[0].partOfSpeech | titlecase }}</p>
+                            <p>{{ w.definitions[0].text }}</p>
+                            <br>
+                        </li>
+                        <br>
+
+                    </ul>
+                </div>
+            </div>
             <div class="row">
                 <div class="col">
                     <p>
-                        <a href="/">
+                        <a href="https://github.com/pattyweave">
                             @pattyweave
                         </a>
                         &nbsp; | &nbsp;

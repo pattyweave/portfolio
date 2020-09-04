@@ -15,6 +15,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+
+import { HttpClientModule } from '@angular/common/http';
+
 const firebaseConfig = {
   apiKey: "AIzaSyDM6hJH8B_VQD3Fq66-Lj61Ge9k79M7tEA",
   authDomain: "pww-portfolio.firebaseapp.com",
@@ -38,7 +41,8 @@ const firebaseConfig = {
     FontAwesomeModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
